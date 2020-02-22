@@ -23,11 +23,11 @@ install_github("akademie-oeffentliches-gesundheitswesen/fidus2github")
 2. Go to the book section [Book section ](https://handbuch.io/book/)
 3. Check that the book is properly set up with the right chapters
 4. Check the name of each chapter. It should begin with 3 letters (indication the specific book) and then a number
-![](man/correct_name.png)
-5. Tick the appropriate book
-![](man/tick_book.png)
-6. Click on export to html
-![](man/choose_export_selected_as_html.png)
+  ![](man/correct_name.png)  
+5. Tick the appropriate book  
+  ![](man/tick_book.png)  
+6. Click on export to html  
+  ![](man/choose_export_selected_as_html.png)
 7. Save the file in an empty directory. Easiest way is to save it as "handbuch.zip"
 8. Open that directory in R
 9. Load the package with 
