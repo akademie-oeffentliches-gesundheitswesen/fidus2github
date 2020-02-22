@@ -8,14 +8,10 @@
 #' convert_fidus_to_github(fiduszipfile = "handbuch.zip", outputdir = "docs/", tmpdir = "tmp/")
 
 
-convert_fidus_to_github <- function(fiduszipfile = "handbuch.zip", outputdir = "docs/", tmpdir = "tmp/") {
+convert_fidus_to_github <- function(fiduszipfile = "handbuch.zip", tmpdir = "tmp/") {
 
   # This script automates the the process of passing html files
   # into the jekyll system. Its done for the handbook for infectious diseases
-
-  unlink(outputdir, recursive = T) # Delete old output dir if it already existed
-  dir.create(outputdir) # make new empty output dir
-
 
   # Unzip the file
   unzip(fiduszipfile, exdir = tmpdir)
@@ -26,14 +22,14 @@ convert_fidus_to_github <- function(fiduszipfile = "handbuch.zip", outputdir = "
   # loop through all html files
   for (a in htmlfiles) {
 
-     # a <- htmlfiles[7]
+      # a <- htmlfiles[5]
 
     # Get rid of the annoying error of a missing newline
     write("\n", paste0(tmpdir,a), append = T)
 
     # Getting the necessary information out of the html-file
     number <- strsplit(strsplit(a, "\\.")[[1]][1], "-")[[1]][2]
-    newfilename <- paste0(outputdir, "chapter_", number, ".md")
+    newfilename <- paste0("chapter_", number, ".md")
 
     # read in the document
     document <- readLines(paste0(tmpdir,a))
@@ -78,18 +74,13 @@ convert_fidus_to_github <- function(fiduszipfile = "handbuch.zip", outputdir = "
     write(documentToAppend, newfilename, append = T)
   }
 
-
-
   # Copying all pictures to the docs folder
   pics <- list.files(tmpdir, pattern = ".png$")
   for (i in pics) {
-    file.copy(paste0(tmpdir, i), paste0("docs/", i))
+    file.copy(paste0(tmpdir, i), i, overwrite = TRUE)
   }
 
   unlink(tmpdir, recursive = T) # Delete tmp dir
 
-
 }
-
-convert_fidus_to_github()
 
