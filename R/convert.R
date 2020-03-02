@@ -82,5 +82,5 @@ convert_fidus_to_github <- function(fiduszipfile = "handbuch.zip", tmpdir = "tmp
 
   unlink(tmpdir, recursive = T) # Delete tmp dir
 
-}
+  }
 
