@@ -1,11 +1,9 @@
 #' Convert Fidus files to Jekyll
 #'
-#' @param fidusfile A Zip-File containing a downloaded html-book from fidus
-#' @param outputdir A string containing a output dir
+#' @param fiduszipfile A Zip-File containing a downloaded html-book from fidus
 #' @param tmpdir A string containing a tmp dir
 #' @return A list of markdown files ready for jekyll and github in the output dir.
-#' @examples
-#' convert_fidus_to_github(fiduszipfile = "handbuch.zip", outputdir = "docs/", tmpdir = "tmp/")
+
 
 
 convert_fidus_to_github <- function(fiduszipfile = "handbuch.zip", tmpdir = "tmp/") {

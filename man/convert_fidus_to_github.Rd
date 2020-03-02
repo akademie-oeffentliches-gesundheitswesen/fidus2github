@@ -7,19 +7,13 @@
 convert_fidus_to_github(fiduszipfile = "handbuch.zip", tmpdir = "tmp/")
 }
 \arguments{
-\item{tmpdir}{A string containing a tmp dir}
-
 \item{fiduszipfile}{A Zip-File containing a downloaded html-book from fidus}
 
-\item{outputdir}{A string containing a output dir}
+\item{tmpdir}{A string containing a tmp dir}
 }
 \value{
 A list of markdown files ready for jekyll and github in the output dir.
 }
 \description{
 Convert Fidus files to Jekyll
-}
-\examples{
-library(fidus2github)
-convert_fidus_to_github()
 }
